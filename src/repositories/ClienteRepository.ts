@@ -7,7 +7,17 @@ import Contato from "../classes/Contato";
 
 export default class ClienteRepository implements CommandsUsuario<Cliente>{
     Listar(): Promise<Cliente[]> {
-        throw new Error("Method not implemented.");
+        return new Promise((resolve, reject) => {
+            conexao.query("Select * from Cliente", (erro, result) => {
+                if (erro) {
+                    return reject(erro)
+                }
+                else {
+                    return resolve(result as Cliente[])
+                }
+            })
+        })
+
     }
     Apagar(id: number): Promise<string> {
         throw new Error("Method not implemented.");
