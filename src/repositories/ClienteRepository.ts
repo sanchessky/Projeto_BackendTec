@@ -6,8 +6,19 @@ import Contato from "../classes/Contato";
 
 
 export default class ClienteRepository implements CommandsUsuario<Cliente>{
+   
     Listar(): Promise<Cliente[]> {
-        throw new Error("Method not implemented.");
+        return new Promise((resolve, reject) => {
+            conexao.query("Select * from Cliente", (erro, result) => {
+                if (erro) {
+                    return reject(erro)
+                }
+                else {
+                    return resolve(result as Cliente[])
+                }
+            })
+        })
+
     }
     Apagar(id: number): Promise<string> {
         throw new Error("Method not implemented.");
@@ -28,7 +39,7 @@ export default class ClienteRepository implements CommandsUsuario<Cliente>{
         return new Promise((resolve, reject) => {
             let id_end: any = null;
             conexao.query(
-                "INSERT INTO endereco(tipo_logradouro,logradouro,numero,cidade,estado,cep) VALUES (?,?,?,?,?,?)",
+                "INSERT INTO Endereco(tipo_logradouro,logradouro,numero,cidade,estado,cep) VALUES (?,?,?,?,?,?)",
                 [
                     obj.endereco.tipo_logradouro,
                     obj.endereco.logradouro,
