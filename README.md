@@ -47,7 +47,7 @@ As chaves estrangeiras garantem a integridade entre as tabelas, tornando o siste
 
 # 🖼️ Diagrama do Banco de Dados
 
-
+![Diagrama](img/Diagrama_Tec_page.jpg)
 
 
 # Autores
