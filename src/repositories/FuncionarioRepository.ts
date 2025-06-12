@@ -35,7 +35,7 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
             return new Promise((resolve, reject) => {
                 let id_end: any = null;
                 conexao.query(
-                    "INSERT INTO endereco(tipo_logradouro,logradouro,numero,cidade,estado,cep) VALUES (?,?,?,?,?,?)",
+                    "INSERT INTO Endereco(tipo_logradouro,logradouro,numero,cidade,estado,cep) VALUES (?,?,?,?,?,?)",
                     [
                         obj.endereco.tipo_logradouro,
                         obj.endereco.logradouro,
@@ -69,7 +69,7 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                                 }
         
                                 conexao.query(
-                                    "INSERT INTO Funcionario(nome,cpf,cargo,data_nascimento,data_contratacao,id_endereco,id_contato,usuario,senha) VALUES (?,?,?,?,?,?,?,?)",
+                                    "INSERT INTO Funcionario(nome,cpf,cargo,data_nascimento,data_contratacao,id_endereco,id_contato,usuario,senha, salario) VALUES (?,?,?,?,?,?,?,?,?,?)",
                                     [
                                         obj.nome,
                                         obj.cpf,
@@ -78,6 +78,8 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                                         obj.data_contratacao,
                                         id_end,
                                         id_cont,
+                                        obj.usuario,
+                                        obj.senha,
                                         obj.salario
                                         
                                     ],

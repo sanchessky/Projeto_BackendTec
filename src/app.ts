@@ -26,11 +26,11 @@ app.post("/api/v1/cliente/cadastro", (req, res) => {
     })
 
 
- app.get("/api/v1/listar/funcionario", (req, res) => {
+ app.get("/api/v1/funcionario/listar", (req, res) => {
     fun.listarFuncionarios(req, res);
 });
 
-app.post("/api/v1/cliente/funcionario", (req, res) => {
+app.post("/api/v1/funcionario/cadastro", (req, res) => {
         fun.cadastroFuncionario(req, res);
     })
    

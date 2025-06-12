@@ -9,12 +9,15 @@ export default class FuncionarioService{
         const fun:Funcionario = new Funcionario();
         fun.nome = req.body.nome
         fun.usuario = req.body.usuario;
-        fun.salario = req.body.senha;
+        fun.senha = req.body.senha;
         fun.cpf = req.body.cpf;
         fun.cargo = req.body.cargo;
         fun.salario = req.body.salario;
         fun.contato = req.body.contato;
         fun.endereco = req.body.endereco;
+        fun.data_contratacao = req.body.data_contratacao;
+        fun.data_nascimento = req.body.data_nascimento;
+
         try{
             const rs = await this.funRepository.Cadastrar(fun);
             return res.status(201).json(rs);
