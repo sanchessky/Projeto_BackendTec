@@ -1,5 +1,5 @@
 # 🛠️ Projeto Backend Tec
-Projeto integrador desenvolvido no Senac Tatuapé, com foco no Back-End de um sistema para uma loja de eletrodomésticos e equipamentos de informática. Idealizado para representar a estrutura funcional de um comércio moderno, o projeto foi inspirado no site Tecnologia do Sanches.
+Projeto integrador desenvolvido no Senac Tatuapé, com foco no Back-End de um sistema para uma loja de eletrodomésticos e equipamentos de informática. Idealizado para representar a estrutura funcional de um comércio moderno
 
 # 📊 Descrição do Diagrama do Banco de Dados
 O banco de dados do Projeto Tec foi modelado para controlar as principais operações de uma loja, com foco em:
@@ -46,7 +46,9 @@ Relacionado diretamente à venda, contendo tipo de pagamento, valor, status e n�
 As chaves estrangeiras garantem a integridade entre as tabelas, tornando o sistema relacional coeso, seguro e eficiente, tanto para o uso operacional quanto para a geração de relatórios e análises administrativas.
 
 # 🖼️ Diagrama do Banco de Dados
-<div align="center"> <img src="Diagrama_Tec_page.jpg" alt="Diagrama do Projeto Tec" width="700"> </div>
+
+
+
 
 # Autores
 * Allan Victor – Front-End
@@ -55,5 +57,5 @@ As chaves estrangeiras garantem a integridade entre as tabelas, tornando o siste
 
 * Ryan – Front-End
 
-* Thiago Sanches – Backend e Documentação
+* Thiago Sanches – Back-End e Documentação
 
