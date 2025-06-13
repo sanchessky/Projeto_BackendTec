@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import ClienteService from "./services/ClienteService";
 import FuncionarioService from "./services/FuncionarioService";
+import ProdutoService from "./services/ProdutoService";
 
 
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 const cli = new ClienteService();
 const fun = new FuncionarioService();
+const produ = new ProdutoService();
 
 
 
@@ -34,6 +36,14 @@ app.post("/api/v1/funcionario/cadastro", (req, res) => {
         fun.cadastroFuncionario(req, res);
     })
    
+app.get("/api/v1/produto/listar",(req,res)=>{
+    produ.listarProduto
+})
+
+app.post("/api/v1/produto/cadastrar",(req,res)=>{
+    produ.cadastroProduto
+})
+
 
 //#####################-- Inicio listen --##################################
 app.listen(5000, () => {
