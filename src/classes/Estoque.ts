@@ -5,8 +5,8 @@ export default class Estoque{
     produto!:Produto;
     quantidade!: string;
     estoque_minimo!:string;
-    estoque!:string;
-    ultima_entrada!: string;
-    ultima_saida!: string;
+    estoque_maximo!:string;
+    ultima_entrada!: Date;
+    ultima_saida!: Date;
 
 }
