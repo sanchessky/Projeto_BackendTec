@@ -16,7 +16,7 @@ export default class ProdutoRepository implements Commands<Produto> {
                     obj.preco,
                     obj.marca,
                     obj.categoria,
-                    obj.garatia,
+                    obj.garantia_meses,
                     obj.codigo_barras,
                     obj.fabricante,
                     obj.data_cadastro,

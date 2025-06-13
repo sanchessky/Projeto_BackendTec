@@ -11,7 +11,7 @@ export default class ProdutoService {
     prod.preco = req.body.preco;
     prod.marca = req.body.marca;
     prod.categoria = req.body.categoria;
-    prod.garatia = req.body.garantia_meses;
+    prod.garantia_meses = req.body.garantia_meses;
     prod.codigo_barras = req.body.codigo_barras;
     prod.fabricante = req.body.fabricante;
     prod.data_cadastro = req.body.data_cadastro;
