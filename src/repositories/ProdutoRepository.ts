@@ -6,10 +6,7 @@ export default class ProdutoRepository implements Commands<Produto> {
     Cadastrar(obj: Produto): Promise<Produto> {
 
         return new Promise((resolve, reject) => {
-            // Antes de cadastrar um cliente, temos que cadastrar o endereço 
-            // deste cliente e então obtemos o id do endereço cadastrado
-            // e alocamos em uma variável para depois inserir na tabela clientes,
-            // no campo id_endereco
+
 
             conexao.query(
                 "INSERT INTO produto(nome,preco,marca,categoria,garantia_meses,codigo_barras,fabricante,data_cadastro,descricao,foto1,foto2,foto3) VALUES (?, ?, ?, ?, ?, ? ,? ,? , ? ,? ,? ,?)",
@@ -34,7 +31,7 @@ export default class ProdutoRepository implements Commands<Produto> {
                         return reject(erro);
                     }
 
-                    const id_end = end.insertId;
+                    
 
 
                 }
@@ -45,7 +42,7 @@ export default class ProdutoRepository implements Commands<Produto> {
 
     Listar(): Promise<Produto[]> {
         return new Promise((resolve, reject) => {
-            conexao.query("SELECT * FROM produto", (erro, result) => {
+            conexao.query("SELECT * FROM Produto", (erro, result) => {
                 if (erro) {
                     return reject(erro);
                 } else {
