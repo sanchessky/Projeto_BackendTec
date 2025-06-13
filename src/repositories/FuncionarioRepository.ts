@@ -7,7 +7,17 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
         throw new Error("Method not implemented.");
     }
     Listar(): Promise<Funcionario[]> {
-        throw new Error("Method not implemented.");
+        return new Promise((resolve, reject) => {
+            conexao.query("Select * from Funcionario", (erro, result) => {
+                if (erro) {
+                    return reject(erro)
+                }
+                else {
+                    return resolve(result as Funcionario[])
+                }
+            })
+        })
+
     }
     Apagar(id: number): Promise<string> {
         throw new Error("Method not implemented.");
@@ -32,8 +42,8 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
     }
     Cadastrar(obj: Funcionario): Promise<Funcionario> {
         return new Promise((resolve, reject) => {
-            return new Promise((resolve, reject) => {
                 let id_end: any = null;
+                let id_cont: any = null;
                 conexao.query(
                     "INSERT INTO Endereco(tipo_logradouro,logradouro,numero,cidade,estado,cep) VALUES (?,?,?,?,?,?)",
                     [
@@ -51,7 +61,7 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                             id_end = end.insertId;
                         }
         
-                        let id_cont: any = null;
+                        
                         conexao.query(
                             "INSERT INTO Contato(telefone,email,rede_social,horario_contato,observacoes) VALUES (?,?,?,?,?)",
                             [
@@ -83,11 +93,11 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                                         obj.salario
                                         
                                     ],
-                                    (erro, result) => {
+                                    (erro, result: any) => {
                                         if (erro) {
                                             return reject(erro);
                                         } else {
-                                            return resolve(obj);
+                                            return resolve(result);
                                         }
                                     }
                                 )
@@ -97,5 +107,4 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                 )
             })
         }
-    )}
 }

@@ -9,7 +9,7 @@ export default abstract class Usuario{
     senha!:string;
     contato!: Contato;
     endereco!: Endereco;
-    data_nascimento!:string
-    data_cadastro!:string
+    data_nascimento!:Date;
+    data_cadastro!:Date;
 
 }
