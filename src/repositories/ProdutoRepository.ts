@@ -9,7 +9,7 @@ export default class ProdutoRepository implements Commands<Produto> {
 
 
             conexao.query(
-                "INSERT INTO produto(nome,preco,marca,categoria,garantia_meses,codigo_barras,fabricante,data_cadastro,descricao,foto1,foto2,foto3) VALUES (?, ?, ?, ?, ?, ? ,? ,? , ? ,? ,? ,?)",
+                "INSERT INTO Produto(nome,preco,marca,categoria,garantia_meses,codigo_barras,fabricante,data_cadastro,descricao,foto1,foto2,foto3) VALUES (?, ?, ?, ?, ?, ? ,? ,? , ? ,? ,? ,?)",
                 [
                     
                     obj.nome,
