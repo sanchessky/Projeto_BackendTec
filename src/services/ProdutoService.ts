@@ -16,6 +16,9 @@ export default class ProdutoService {
     prod.fabricante = req.body.fabricante;
     prod.data_cadastro = req.body.data_cadastro;
     prod.descricao = req.body.descricao;
+    prod.foto1 = req.body.foto1;
+    prod.foto2 = req.body.foto2;
+    prod.foto3 = req.body.foto3;
 
 
 

@@ -9,5 +9,7 @@ export default class Produto{
     fabricante!:string;
     data_cadastro!:Date;
     descricao!:string;
-
+    foto1!:string;
+    foto2!:string;
+    foto3!:string;
 }
