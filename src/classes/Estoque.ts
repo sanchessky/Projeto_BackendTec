@@ -7,6 +7,6 @@ export default class Estoque{
     estoque_minimo!:string;
     estoque_maximo!:string;
     ultima_entrada!: Date;
-    ultima_saida!: Dates;
+    ultima_saida!: Date;
 
 }
