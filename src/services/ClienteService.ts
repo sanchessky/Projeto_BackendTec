@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import Cliente from "../classes/Cliente";
-import ClienteRepository from "../repositories/ClienteRepository";
+import ClienteRepository from "../repository/ClienteRepository";
 
 export default class ClienteService{
     cliRepository = new ClienteRepository();

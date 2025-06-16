@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import Funcionario from "../classes/Funcionario";
-import FuncionarioRepository from "../repositories/FuncionarioRepository";
+import FuncionarioRepository from "../repository/FuncionarioRepository";
 
 export default class FuncionarioService{
     funRepository = new FuncionarioRepository();

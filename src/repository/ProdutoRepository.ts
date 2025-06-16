@@ -28,33 +28,28 @@ export default class ProdutoRepository implements Commands<Produto> {
     }
     Cadastrar(obj: Produto): Promise<Produto> {
         return new Promise((resolve, reject) => {
+          conexao.query(
+            "INSERT INTO Produto(nome, preco, marca, categoria, garantia_meses, codigo_barras, fabricante, data_cadastro, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            [
+              obj.nome,
+              obj.preco,
+              obj.marca,
+              obj.categoria,
+              obj.garantia_meses,
+              obj.codigo_barras,
+              obj.fabricante,
+              obj.data_cadastro,
+              obj.descricao,
 
-            conexao.query("INSERT INTO Produto(nome, preco, marca, categoria, garantia_meses, codigo_barras, fabricante, data_cadastro, descricao,foto1,foto2,foto3) Values (?,?,?,?,?,?,?,?,?,?,?,?)",
-                [
-                obj.nome,
-                obj.preco,
-                obj.marca,
-                obj.categoria,
-                obj.garantia_meses,
-                obj.codigo_barras,
-                obj.fabricante,
-                obj.data_cadastro,
-                obj.descricao,
-                obj.foto1,
-                obj.foto2,
-                obj.foto3
-
-                ],
-
-                (erro, end: any) => {
-
-                    if (erro) {
-                        return reject(erro);
-                    }
-                    else {
-                        return resolve(obj)
-                    }
-                })
-        })
-    }
-}
+            ],
+            (erro, result: any) => {
+              if (erro) {
+                return reject(erro);
+            } else {
+                return resolve(result as Produto);
+            }
+            }
+          );
+        });
+      }
+}      
