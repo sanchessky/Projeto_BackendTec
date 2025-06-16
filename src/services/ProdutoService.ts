@@ -38,37 +38,4 @@ export default class ProdutoService {
     }
   }
 
-  async listarProdutosMaisVendidos(req: Request, res: Response) {
-    try {
-      const resultado = await this.prodRepository.Listar();
-      return res.status(200).json(resultado);
-    } catch (erro) {
-      return res.status(500).json(erro);
-    }
-  }
-
-
-
-async listarProdutosPorCategoria(req: Request, res: Response) {
-  let categoria = req.params.categoria
-  categoria = `'%${categoria}%'`
-  try {
-    const resultado = await this.prodRepository.ListarPorCategoria(categoria);
-    return res.status(200).json(resultado);
-  } catch (erro) {
-    return res.status(500).json(erro);
-  }
-}
-
-async listarProdutosPorId(req: Request, res: Response) {
-  let id = req.params.id
-  try {
-    const resultado = await this.prodRepository.ListarPorId(parseInt(id));
-    return res.status(200).json(resultado);
-  } catch (erro) {
-    return res.status(500).json(erro);
-  }
-}
-
-
 }

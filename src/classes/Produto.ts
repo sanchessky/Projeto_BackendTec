@@ -4,7 +4,7 @@ export default class Produto{
     preco!:number;
     marca!:string;
     categoria!:string;
-    garantia_meses!:string;
+    garantia_meses!:Date;
     codigo_barras!:string;
     fabricante!:string;
     data_cadastro!:Date;
