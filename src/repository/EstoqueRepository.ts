@@ -19,7 +19,16 @@ export default class EstoqueRepository implements CommandsEstoque<Estoque> {
         throw new Error("Method not implemented.");
     }
     Listar(): Promise<Estoque[]> {
-        throw new Error("Method not implemented.");
+        return new Promise((resolve, reject) => {
+            conexao.query("Select * from Funcionario", (erro, result) => {
+                if (erro) {
+                    return reject(erro)
+                }
+                else {
+                    return resolve(result as Estoque[])
+                }
+            })
+        })
     }
     Apagar(id: number): Promise<string> {
         throw new Error("Method not implemented.");
