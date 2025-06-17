@@ -44,7 +44,6 @@ export default class ProdutoRepository implements Commands<Produto> {
               obj.foto2,
               obj.foto3
 
-// codigo correto
             ],
             (erro, result: any) => {
               if (erro) {
