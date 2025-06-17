@@ -73,16 +73,15 @@ export default class ClienteRepository implements CommandsUsuario<Cliente>{
                             }
     
                             conexao.query(
-                                "INSERT INTO Cliente(nome,cpf,data_nascimento,data_cadastro,id_endereco,id_contato,usuario,senha) VALUES (?,?,?,?,?,?,?,?)",
+                                "INSERT INTO Cliente(nome,cpf,data_nascimento,data_cadastro,id_endereco,id_contato) VALUES (?,?,?,?,?,?)",
                                 [
                                     obj.nome,
                                     obj.cpf,
                                     obj.data_nascimento,
                                     obj.data_cadastro,
                                     id_end,
-                                    id_cont,
-                                    obj.usuario,
-                                    obj.senha
+                                    id_cont
+                                  
                                 ],
                                 (erro, result) => {
                                     if (erro) {

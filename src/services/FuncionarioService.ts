@@ -8,8 +8,6 @@ export default class FuncionarioService{
     async cadastroFuncionario(req:Request, res:Response){
         const fun:Funcionario = new Funcionario();
         fun.nome = req.body.nome
-        fun.usuario = req.body.usuario;
-        fun.senha = req.body.senha;
         fun.cpf = req.body.cpf;
         fun.cargo = req.body.cargo;
         fun.salario = req.body.salario;

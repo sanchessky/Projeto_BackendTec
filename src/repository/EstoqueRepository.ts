@@ -20,7 +20,7 @@ export default class EstoqueRepository implements CommandsEstoque<Estoque> {
     }
     Listar(): Promise<Estoque[]> {
         return new Promise((resolve, reject) => {
-            conexao.query("Select * from Funcionario", (erro, result) => {
+            conexao.query("Select * from Estoque", (erro, result) => {
                 if (erro) {
                     return reject(erro)
                 }
@@ -69,6 +69,7 @@ export default class EstoqueRepository implements CommandsEstoque<Estoque> {
                             "INSERT INTO Estoque(id_produto, quantidade, estoque_minimo, estoque_maximo, ultima_entrada, ultima_saida) VALUES (?,?,?,?,?,?)",
                             [
                                 id_prd,
+                                obj.produto,
                                 obj.quantidade,
                                 obj.estoque_minimo,
                                 obj.estoque_maximo,

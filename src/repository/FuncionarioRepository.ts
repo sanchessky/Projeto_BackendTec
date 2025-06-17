@@ -79,7 +79,7 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                                 }
         
                                 conexao.query(
-                                    "INSERT INTO Funcionario(nome,cpf,cargo,data_nascimento,data_contratacao,id_endereco,id_contato,usuario,senha, salario) VALUES (?,?,?,?,?,?,?,?,?,?)",
+                                    "INSERT INTO Funcionario(nome,cpf,cargo,data_nascimento,data_contratacao,id_endereco,id_contato, salario) VALUES (?,?,?,?,?,?,?,?)",
                                     [
                                         obj.nome,
                                         obj.cpf,
@@ -88,8 +88,6 @@ export default class FuncionarioRepository implements CommandsFuncionario<Funcio
                                         obj.data_contratacao,
                                         id_end,
                                         id_cont,
-                                        obj.usuario,
-                                        obj.senha,
                                         obj.salario
                                         
                                     ],

@@ -7,6 +7,7 @@ export default class EstoqueService {
 
   async cadastroEstoque(req: Request, res: Response) {
     const estoq: Estoque = new Estoque();
+    
     estoq.produto = req.body.produto;
     estoq.quantidade = req.body.quantidade;
     estoq.estoque_maximo = req.body.estoque_maximo;
