@@ -59,11 +59,11 @@ export default class EstoqueRepository implements CommandsEstoque<Estoque> {
                     obj.produto.foto2,
                     obj.produto.foto3
                 ],
-                (erro, result: any) => {
+                (erro, prd: any) => {
                     if (erro) {
                         return reject(erro);
-                    } else {
-                        id_prd = result.insertId;
+                    } 
+                      id_prd = prd.insertId;
     
                         conexao.query(
                             "INSERT INTO Estoque(id_produto, quantidade, estoque_minimo, estoque_maximo, ultima_entrada, ultima_saida) VALUES (?,?,?,?,?,?)",
@@ -76,15 +76,14 @@ export default class EstoqueRepository implements CommandsEstoque<Estoque> {
                                 obj.ultima_entrada,
                                 obj.ultima_saida
                             ],
-                            (erro, prd: any) => {
+                            (erro, result) => {
                                 if (erro) {
                                     return reject(erro);
                                 } else {
                                     return resolve(obj);
                                 }
                             }
-                        );
-                    }
+                           );
                 }
             );
         });

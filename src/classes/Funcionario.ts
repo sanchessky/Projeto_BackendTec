@@ -1,5 +1,5 @@
 
-import Usuario from "./Usuario";
+import Usuario from "./Login";
 
 export default class Funcionario extends Usuario{
     cargo!:string;

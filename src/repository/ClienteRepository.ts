@@ -1,5 +1,5 @@
 import Cliente from "../classes/Cliente";
-import CommandsUsuario from "../Interfaces/CommandsUsuario";
+import CommandsUsuario from "../Interfaces/CommandsLogin";
 import { conexao } from "../database/Config";
 import Contato from "../classes/Contato";
 
