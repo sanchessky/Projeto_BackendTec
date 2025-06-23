@@ -19,3 +19,13 @@
   "ultima_entrada": "2025-06-15",
   "ultima_saida": "2025-06-16"
 }
+
+
+{
+  "id_produto": 1,
+  "quantidade": 30,
+  "estoque_minimo": 5,
+  "estoque_maximo": 100,
+  "ultima_entrada": "2025-06-16",
+  "ultima_saida": "2025-06-17"
+}
