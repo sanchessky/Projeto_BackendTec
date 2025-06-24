@@ -1,31 +1,8 @@
 {
-  "produto": {
-    "nome": "Monitor LED",
-    "preco": 799.90,
-    "marca": "AOC",
-    "categoria": "Informática",
-    "garantia_meses": 24,
-    "codigo_barras": "1234567890123",
-    "fabricante": "AOC",
-    "data_cadastro": "2025-06-17",
-    "descricao": "Monitor 24 polegadas",
-    "foto1": "img1.jpg",
-    "foto2": "img2.jpg",
-    "foto3": "img3.jpg"
-  },
-  "quantidade": 50,
+  "produto": 5,
+  "quantidade": 1,
   "estoque_minimo": 10,
   "estoque_maximo": 100,
-  "ultima_entrada": "2025-06-15",
-  "ultima_saida": "2025-06-16"
-}
-
-
-{
-  "id_produto": 1,
-  "quantidade": 30,
-  "estoque_minimo": 5,
-  "estoque_maximo": 100,
-  "ultima_entrada": "2025-06-16",
-  "ultima_saida": "2025-06-17"
+  "ultima_entrada": "2025-06-23",
+  "ultima_saida": "2025-06-23"
 }

@@ -1,11 +1,10 @@
 import Cliente from "../classes/Cliente";
-import CommandsUsuario from "../Interfaces/CommandsUsuario";
 import { conexao } from "../database/Config";
-import Contato from "../classes/Contato";
+import CommandsPessoa from "../Interfaces/CommandsPessoa";
 
 
 
-export default class ClienteRepository implements CommandsUsuario<Cliente>{
+export default class ClienteRepository implements CommandsPessoa<Cliente>{
    
     Listar(): Promise<Cliente[]> {
         return new Promise((resolve, reject) => {
@@ -39,11 +38,13 @@ export default class ClienteRepository implements CommandsUsuario<Cliente>{
         return new Promise((resolve, reject) => {
             let id_end: any = null;
             conexao.query(
-                "INSERT INTO Endereco(tipo_logradouro,logradouro,numero,cidade,estado,cep) VALUES (?,?,?,?,?,?)",
+                "INSERT INTO Endereco(tipo_logradouro,logradouro,numero, bairro,complemento,cidade,estado,cep) VALUES (?,?,?,?,?,?,?,?)",
                 [
                     obj.endereco.tipo_logradouro,
                     obj.endereco.logradouro,
                     obj.endereco.numero,
+                    obj.endereco.bairro,
+                    obj.endereco.complemento,
                     obj.endereco.cidade,
                     obj.endereco.estado,
                     obj.endereco.cep
@@ -54,35 +55,18 @@ export default class ClienteRepository implements CommandsUsuario<Cliente>{
                     } else {
                         id_end = end.insertId;
                     }
-    
-                    let id_cont: any = null;
-                    conexao.query(
-                        "INSERT INTO Contato(telefone,email,rede_social,horario_contato,observacoes) VALUES (?,?,?,?,?)",
-                        [
-                            obj.contato.telefone,
-                            obj.contato.email,
-                            obj.contato.rede_social,
-                            obj.contato.horario_contato,
-                            obj.contato.observacoes
-                        ],
-                        (erro, cont: any) => {
-                            if (erro) {
-                                return reject(erro);
-                            } else {
-                                id_cont = cont.insertId;
-                            }
-    
+                 
                             conexao.query(
-                                "INSERT INTO Cliente(nome,cpf,data_nascimento,data_cadastro,id_endereco,id_contato,usuario,senha) VALUES (?,?,?,?,?,?,?,?)",
+                                "INSERT INTO Cliente(nome,cpf,telefone,email,data_nascimento,data_cadastro,id_endereco) VALUES (?,?,?,?,?,?,?)",
                                 [
                                     obj.nome,
                                     obj.cpf,
                                     obj.data_nascimento,
                                     obj.data_cadastro,
-                                    id_end,
-                                    id_cont,
-                                    obj.usuario,
-                                    obj.senha
+                                    obj.email,
+                                    obj.endereco,
+                                    id_end
+                                    
                                 ],
                                 (erro, result) => {
                                     if (erro) {
@@ -96,6 +80,5 @@ export default class ClienteRepository implements CommandsUsuario<Cliente>{
                     )
                 }
             )
-        })
     }
 }

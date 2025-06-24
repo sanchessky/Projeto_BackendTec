@@ -9,10 +9,9 @@ export default class ClienteService{
         const cli:Cliente = new Cliente();
         cli.nome = req.body.nome;
         cli.cpf = req.body.cpf;
-        cli.senha = req.body.senha;
-        cli.usuario = req.body.usuario;
         cli.endereco = req.body.endereco;
-        cli.contato = req.body.contato;
+        cli.telefone = req.body.telefone;
+        cli.email = req.body.email;
         cli.data_cadastro = req.body.data_cadastro;
         cli.data_nascimento = req.body.data_nascimento;
         try{

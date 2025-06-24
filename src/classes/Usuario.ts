@@ -1,15 +1,9 @@
-
-import Endereco from "./Endereco";
-import Contato from "./Contato";
-export default abstract class Usuario{
+export default class Usuario{
     id!:number;
-    nome!:string;
-    cpf!:string;
-    usuario!:string;
+    nomeusuario!:string;
     senha!:string;
-    contato!: Contato;
-    endereco!: Endereco;
-    data_nascimento!:Date;
-    data_cadastro!:Date;
-
+    fotousuario!: string;
+    criadoem!: Date;
+    atualizadoem!:Date;
+    
 }

@@ -1,4 +1,4 @@
-import CommandsUsuario from "./CommandsUsuario";
+import CommandsUsuario from "./CommandsPessoa";
 
 
 export default interface CommandsFuncionario<T> extends CommandsUsuario<T>{

@@ -1,7 +1,8 @@
 
-import Usuario from "./Usuario";
+import Pessoas from "./Pessoas";
 
 
-export default class Cliente extends Usuario{
-    aniversario!:Date;
+export default class Cliente extends Pessoas{
+    data_nascimento!:Date;
+    
 }

@@ -1,7 +1,7 @@
 
-import Usuario from "./Usuario";
+import Pessoas from "./Pessoas";
 
-export default class Funcionario extends Usuario{
+export default class Funcionario extends Pessoas{
     cargo!:string;
     salario!:number;
     data_contratacao!: Date;
