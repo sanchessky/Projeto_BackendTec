@@ -61,3 +61,9 @@
   "tipo_pagamento": "Cartão",
   "total_pagar": 250.00
 }
+
+{
+  "nomeusuario": "thiagoTec@",
+  "senha": "Cartao",
+"fotousuario": "ADM.png"
+}

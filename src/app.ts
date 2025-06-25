@@ -7,6 +7,7 @@ import VendaService from "./services/VendaService";
 import ItemvendidoService from "./services/itemvendidoService";
 import PagamentoService from "./services/PagamentoService";
 import UsuarioService from "./services/UsuarioService";
+import EstoqueService from "./services/EstoqueService";
 
 
 
@@ -27,6 +28,7 @@ const ven = new VendaService();
 const item = new ItemvendidoService();
 const pag = new PagamentoService()
 const us = new UsuarioService() 
+const estoq = new EstoqueService()
 
 app.get("/api/v1/cliente/listar", (req, res) => {
     cli.listarClientes(req, res);
@@ -76,6 +78,14 @@ app.get("/api/v1/pagamento/listar", (req, res) => {
  app.post("/api/v1/usuarios/cadastrar", (req, res) => {
     us.cadastrarUsuario(req, res);
   });
+
+
+  app.post("/api/v1/estoque/cadastrar", (req, res) => {
+    estoq.cadastroEstoque(req, res);
+  });
+  app.post("/api/v1/estoque/listar", (req, res) => {
+    estoq.listarEstoque(req, res);
+   });
 
 //#####################-- Inicio listen --##################################
 app.listen(5000, '0.0.0.0', () => {
