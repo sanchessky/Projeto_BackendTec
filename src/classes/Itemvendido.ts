@@ -5,6 +5,4 @@ export default class ItemVendido{
     venda!:Venda;
     produto!:Produto;
     quantidade!:number;
-    preco_unitario!:number;
-    desconto!:number;
 }

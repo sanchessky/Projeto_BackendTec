@@ -5,7 +5,6 @@ export default class Venda{
     data_hora!:Date
     cliente!:Cliente;
     funcionario!:Funcionario;
-    forma_entrega!: string;
-    valor_total!:number;
+
     
 }

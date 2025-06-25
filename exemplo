@@ -1,8 +1,63 @@
 {
-  "produto": 5,
-  "quantidade": 1,
-  "estoque_minimo": 10,
-  "estoque_maximo": 100,
-  "ultima_entrada": "2025-06-23",
-  "ultima_saida": "2025-06-23"
+  "nome": "Thiago Sanches",
+  "email": "thiago@teste.com",
+  "cpf": "123456789",
+  "telefone": "(11)4002-5622",
+  "data_nascimento": "2002-05-15",
+  "endereco": {
+    "id": 1,
+    "tipo_logradouro": "Rua",
+    "logradouro": "Maresias",
+    "numero": "77",
+    "complemento": "Casa da frente",
+    "cep": "147788",
+    "bairro": "Vila Alegre"
+  }
+}
+
+{
+  "nome": "Thiago Sanches",
+  "email": "thiago@tecsanches.com",
+  "cpf": "123456789",
+  "telefone": "(11)4002-5622",
+  "cargo": "Gerente",
+  "salario": "10000",
+  "endereco": {
+    "id": 1,
+    "tipo_logradouro": "Rua",
+    "logradouro": "sabia",
+    "numero": "77",
+    "complemento": "Casa da frente",
+    "cep": "147788",
+    "bairro": "Vila Alegre"
+  }
+}
+
+{
+  "nome": "Smartphone Galaxy A14",
+  "descricao": "Celular Samsung Galaxy A14 com 128GB, Dual Chip, câmera tripla e tela de 6.6 polegadas.",
+  "preco": 1299.90,
+  "marca": "Samsung",
+  "categoria": "Eletrônicos",
+  "garantia_meses": "12",
+  "codigo_barras": "7891234567890",
+  "fabricante": "Samsung Eletrônica da Amazônia LTDA",
+  "foto1": "https://exemplo.com/imagens/galaxy-a14-1.jpg",
+  "foto2": "https://exemplo.com/imagens/galaxy-a14-2.jpg",
+  "foto3": "https://exemplo.com/imagens/galaxy-a14-3.jpg"
+}
+{
+  "id_cliente": 1,
+  "id_funcionario": 1
+}
+{
+  "id_venda": 2,
+  "id_produto": 1,
+  "quantidade": 3
+}
+
+{
+  "id_venda": 2,
+  "tipo_pagamento": "Cartão",
+  "total_pagar": 250.00
 }

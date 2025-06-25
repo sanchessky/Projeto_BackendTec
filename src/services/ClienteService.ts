@@ -7,13 +7,12 @@ export default class ClienteService{
 
     async cadastroCliente(req:Request, res:Response){
         const cli:Cliente = new Cliente();
-        cli.nome = req.body.nome;
-        cli.cpf = req.body.cpf;
-        cli.endereco = req.body.endereco;
-        cli.telefone = req.body.telefone;
+        cli.nome = req.body.nome
         cli.email = req.body.email;
-        cli.data_cadastro = req.body.data_cadastro;
+        cli.cpf = req.body.cpf;
+        cli.telefone = req.body.telefone;
         cli.data_nascimento = req.body.data_nascimento;
+        cli.endereco = req.body.endereco;
         try{
             const rs = await this.cliRepository.Cadastrar(cli);
             return res.status(201).json(rs);

@@ -8,7 +8,6 @@ export default abstract class Pessoas{
     email!:string;
     endereco!: Endereco;
     data_nascimento!:Date;
-    data_cadastro!:Date;
 
 
 }
