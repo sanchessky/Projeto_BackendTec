@@ -30,7 +30,7 @@ const pag = new PagamentoService()
 const us = new UsuarioService() 
 const estoq = new EstoqueService()
 
-app.get("/api/v1/cliente/listar", (req, res) => {
+app.get("/api/v1/listar/cliente", (req, res) => {
     cli.listarClientes(req, res);
 });
 
@@ -39,54 +39,50 @@ app.post("/api/v1/cliente/cadastrar", (req, res) => {
     })
 
 
-app.get("/api/v1/funcionario/listar", (req, res) => {
+app.get("/api/v1/listar/funcionario", (req, res) => {
         fun.listarFuncionarios(req, res);
 });
     
-app.post("/api/v1/funcionario/cadastrar", (req, res) => {
+app.post("/api/v1/cadastrar/funcionario", (req, res) => {
         fun.cadastroFuncionario(req, res);
 });
     
-app.post("/api/v1/produto/cadastrar", (req, res) => {
+app.post("/api/v1/cadastrar/produto", (req, res) => {
     prod.cadastroProduto(req, res);
 });
-
-
-app.get("/api/v1/produto/listar", (req, res) => {
+app.get("/api/v1/listar/produto", (req, res) => {
     prod.listarProdutos(req, res);
 });
-app.get("/api/v1/venda/listar", (req, res) => {
+app.get("/api/v1/listar/venda", (req, res) => {
     ven.listarVendas(req, res);
 });
-app.post("/api/v1/venda/cadastrar", (req, res) => {
+app.post("/api/v1/cadastrar/venda", (req, res) => {
     ven.cadastroVenda(req, res);
 });
-app.get("/api/v1/itemvendido/listar", (req, res) => {
+app.get("/api/v1/listar/itemvendido", (req, res) => {
     item.listarItem(req, res);
 });
-app.post("/api/v1/itemvendido/cadastrar", (req, res) => {
+app.post("/api/v1/cadastrar/itemvendido", (req, res) => {
     item.cadastroItem(req, res);
 });
-app.get("/api/v1/pagamento/listar", (req, res) => {
+app.get("/api/v1/listar/pagamento", (req, res) => {
     pag.listarPagamentos(req, res);
  });
- 
- app.post("/api/v1/pagamento/cadastrar", (req, res) => {
+app.post("/api/v1/cadastrar/pagamento", (req, res) => {
    pag.cadastroPagamento(req, res);
  });
-
- app.post("/api/v1/usuarios/cadastrar", (req, res) => {
-    us.cadastrarUsuario(req, res);
-  });
-
-
-  app.post("/api/v1/estoque/cadastrar", (req, res) => {
+app.post("/api/v1/cadastrar/estoque", (req, res) => {
     estoq.cadastroEstoque(req, res);
   });
-  app.post("/api/v1/estoque/listar", (req, res) => {
+app.post("/api/v1/listar/estoque", (req, res) => {
     estoq.listarEstoque(req, res);
    });
-
+   app.post("/api/v1/cadastrar/usuarios", (req, res) => {
+    us.cadastrarUsuario(req, res);
+  });
+app.post("/api/v1/login/usuario", (req, res) => {
+    us.loginUsuario(req, res);
+  });
 //#####################-- Inicio listen --##################################
 app.listen(5000, '0.0.0.0', () => {
     console.log(`Online em: http://127.0.0.1:5000`)

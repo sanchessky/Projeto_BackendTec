@@ -1,28 +1,30 @@
 import { resolve } from "path";
 import Usuario from "../classes/Usuario";
-import CommandsLogin from "../Interfaces/CommandsUsuario";
-import bcrypt from "bcrypt"
+import CommandsUsuario from "../Interfaces/CommandsUsuario";
+import bcrypt from "bcrypt";
 import { conexao } from "../database/Config";
 
-export default class LoginRepository implements CommandsLogin<Usuario>{
-    login(usuario: string, senha: string) {
-        conexao.query(`SELECT us.id,us.nomeusuario, us.senha, us.fotousuario, cli.id_cliente WHERE us.nomeusuario=?`, 
-            [
-                usuario
-            ],
-            (erro, result:any)=>{
-                if (erro) {
-                    return "false"
-                }
-                else{
-                    return result
-                }
-            }
-        )
-        
 
+export default class UsuarioRepository implements CommandsUsuario<Usuario>{
+    login(usuario: string, senha: string):Promise<any> {
+        return new Promise((resolve, reject)=>{
+            conexao.query(`SELECT * from usuario WHERE nomeusuario=?`, 
+                [
+                    usuario
+                ],
+                (erro, result:any)=>{
+                    if (erro) {
+                        return reject(erro)
+                    }
+                    else{
+                        return resolve(result)
+                    }
+                }
+            )
+        })
+ 
 
-    }
+}
     loginUs(usuario: string, cpf: string, email: string, senha: string) {
         throw new Error("Method not implemented.");
     }
