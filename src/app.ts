@@ -57,6 +57,7 @@ app.get("/api/v1/produto/listarmaisvendidos", (req, res) => {
     prod.listarProdutosMaisVendidos(req, res);
 });
 
+
 app.get("/api/v1/produto/listarporcategoria/:categoria", (req, res) => {
     prod.listarProdutosPorCategoria(req, res);
 });
