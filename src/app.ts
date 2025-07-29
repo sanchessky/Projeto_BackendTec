@@ -53,12 +53,25 @@ app.post("/api/v1/cadastrar/produto", (req, res) => {
 app.get("/api/v1/listar/produto", (req, res) => {
     prod.listarProdutos(req, res);
 });
+app.get("/api/v1/produto/listarmaisvendidos", (req, res) => {
+    prod.listarProdutosMaisVendidos(req, res);
+});
+
+app.get("/api/v1/produto/listarporcategoria/:categoria", (req, res) => {
+    prod.listarProdutosPorCategoria(req, res);
+});
+
+app.get("/api/v1/produto/listarporid/:id", (req, res) => {
+    prod.listarProdutosPorId(req, res);
+});
 app.get("/api/v1/listar/venda", (req, res) => {
     ven.listarVendas(req, res);
 });
 app.post("/api/v1/cadastrar/venda", (req, res) => {
     ven.cadastroVenda(req, res);
 });
+
+
 app.get("/api/v1/listar/itemvendido", (req, res) => {
     item.listarItem(req, res);
 });
