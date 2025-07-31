@@ -49,6 +49,18 @@ As chaves estrangeiras garantem a integridade entre as tabelas, tornando o siste
 
 ![Diagrama](img/Diagrama_Tec_page.jpg)
 
+## 🗄️ Back-End
+
+A parte do back-end conta com a implementação do banco de dados MySQL, responsável pelo armazenamento e gerenciamento dos dados da aplicação.
+
+![Banco de Dados](https://github.com/sanchessky/Projeto_BackendTec/blob/main/img/bancodedados.PNG?raw=true)
+
+## 🛠️ Ambiente de Desenvolvimento
+
+O back-end foi desenvolvido utilizando o **Visual Studio Code**:
+
+![Visual Studio Code](https://github.com/sanchessky/Projeto_BackendTec/blob/main/img/backtander.PNG?raw=true)
+
 
 # Autores
 * Allan Victor – Front-End
@@ -58,4 +70,3 @@ As chaves estrangeiras garantem a integridade entre as tabelas, tornando o siste
 * Ryan – Front-End
 
 * Thiago Sanches – Back-End e Documentação
-
