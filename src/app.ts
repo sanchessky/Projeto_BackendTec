@@ -97,7 +97,6 @@ app.post("/api/v1/listar/estoque", (req, res) => {
 app.post("/api/v1/login/usuario", (req, res) => {
     us.loginUsuario(req, res);
   });
-//#####################-- Inicio listen --##################################
 app.listen(5000, '0.0.0.0', () => {
     console.log(`Online em: http://127.0.0.1:5000`)
 });
